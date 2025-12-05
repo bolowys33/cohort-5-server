@@ -1,17 +1,21 @@
 const express = require("express");
 const {
-  createUser,
   getAllUsers,
   getSingleUser,
-  updateUser,
-  deleteUser,
+  getProfile,
+  updateProfile,
+  deleteAccount,
 } = require("../controllers/user.controller");
+const authMiddleware = require("../middlewares/auth.middleware");
+const roleMiddleware = require("../middlewares/role.middleware");
 const userRouter = express.Router();
 
-userRouter.post("/create", createUser);
-userRouter.get("/", getAllUsers);
-userRouter.get("/user/:id", getSingleUser);
-userRouter.patch("/update/:id", updateUser);
-userRouter.delete("/delete/:id", deleteUser);
+userRouter.use(authMiddleware);
+
+userRouter.get("/", roleMiddleware, getAllUsers);
+userRouter.get("/user/:id", roleMiddleware, getSingleUser);
+userRouter.get("/user", getProfile);
+userRouter.patch("/update", updateProfile);
+userRouter.delete("/delete", deleteAccount);
 
 module.exports = userRouter;

@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+
   "dependencies": {
     "argon2": "^0.44.0",
     "dotenv": "^17.2.3",

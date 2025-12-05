@@ -1,10 +1,10 @@
 const express = require("express");
 const dotenv = require("dotenv");
-const connectDB = require("./db");
-const userRouter = require("./routes/user.routes");
-const authRouter = require("./routes/auth.routes");
+const connectDB = require("./src/db");
+const userRouter = require("./src/routes/user.routes");
+const authRouter = require("./src/routes/auth.routes");
 const swaggerUI = require("swagger-ui-express");
-const swaggerSpec = require("./documentation/swagger");
+const swaggerSpec = require("./src/documentation/swagger");
 dotenv.config();
 
 const app = express();

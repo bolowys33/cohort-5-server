@@ -1,4 +1,4 @@
-# Steps to run use the repo
+# Steps to run or use the repo
 
 - Run git clone to clone the repo
 - Remove the git file using "rm -fr .git"
